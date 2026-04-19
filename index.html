@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Jamason Blair — Global Supply Chain Management. Blending logistics, hardware operations, and custom technical solutions." />
   <title>Jamason Blair</title>
+  <meta name="theme-color" id="themeColor" content="#ffffff" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -807,14 +808,18 @@
     // Theme toggle
     const html = document.documentElement;
     const themeToggle = document.getElementById('themeToggle');
+    const themeColor = document.getElementById('themeColor');
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    html.setAttribute('data-theme', savedTheme ?? (prefersDark ? 'dark' : 'light'));
+    const initialTheme = savedTheme ?? (prefersDark ? 'dark' : 'light');
+    html.setAttribute('data-theme', initialTheme);
+    themeColor.content = initialTheme === 'dark' ? '#000000' : '#ffffff';
 
     themeToggle.addEventListener('click', () => {
       const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
+      themeColor.content = next === 'dark' ? '#000000' : '#ffffff';
     });
 
     // Scroll-triggered fade-up
