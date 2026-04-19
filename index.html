@@ -185,19 +185,21 @@
     .hero-inner { max-width: 680px; }
 
     .hero-avatar {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin: 0 auto 28px;
-      border: 1px solid var(--border);
-      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      width: 300px;
+      height: 380px;
+      margin: 0 auto 40px;
+      border-radius: 0;
+      overflow: visible;
+      border: none;
+      box-shadow: none;
     }
     .hero-avatar img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center top;
+      mask-image: radial-gradient(ellipse 88% 88% at 50% 38%, black 25%, transparent 72%);
+      -webkit-mask-image: radial-gradient(ellipse 88% 88% at 50% 38%, black 25%, transparent 72%);
     }
 
     .hero-eyebrow {
