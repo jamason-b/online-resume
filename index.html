@@ -172,34 +172,39 @@
     /* ─── Hero ──────────────────────────────────────────────── */
     .hero {
       min-height: 100svh;
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 100px 24px 80px;
+      padding: 80px 60px 80px 48px;
       background: var(--bg);
       position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      gap: 40px;
     }
 
-    .hero-inner { max-width: 680px; }
-
-    .hero-avatar {
-      width: 300px;
-      height: 380px;
-      margin: 0 auto 40px;
-      border-radius: 0;
-      overflow: visible;
-      border: none;
-      box-shadow: none;
-    }
-    .hero-avatar img {
-      width: 100%;
+    .hero-image {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
       height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      mask-image: radial-gradient(ellipse 70% 85% at 50% 35%, black 20%, transparent 68%);
-      -webkit-mask-image: radial-gradient(ellipse 70% 85% at 50% 35%, black 20%, transparent 68%);
+      min-height: 500px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      object-fit: contain;
+      object-position: bottom center;
+      filter: drop-shadow(0 24px 48px rgba(0,0,0,0.12));
+    }
+
+    .hero-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
     }
 
     .hero-eyebrow {
@@ -212,7 +217,7 @@
     }
 
     .hero-name {
-      font-size: clamp(48px, 8vw, 80px);
+      font-size: clamp(40px, 5vw, 72px);
       font-weight: 300;
       letter-spacing: -0.03em;
       color: var(--ink-dark);
@@ -221,18 +226,18 @@
     }
 
     .hero-tagline {
-      font-size: clamp(18px, 3vw, 24px);
+      font-size: clamp(16px, 2vw, 22px);
       font-weight: 400;
       color: var(--ink);
       margin-bottom: 12px;
     }
 
     .hero-sub {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 300;
       color: var(--ink-light);
-      max-width: 480px;
-      margin: 0 auto 40px;
+      max-width: 400px;
+      margin-bottom: 40px;
       line-height: 1.7;
     }
 
@@ -240,7 +245,6 @@
       display: flex;
       gap: 16px;
       align-items: center;
-      justify-content: center;
     }
 
     .icon-link {
@@ -549,6 +553,24 @@
     }
 
     /* ─── Responsive ────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 88px 24px 60px;
+        text-align: center;
+        gap: 0;
+      }
+      .hero-image {
+        min-height: 320px;
+        align-items: center;
+      }
+      .hero-image img { max-width: 260px; }
+      .hero-inner { align-items: center; text-align: center; }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .hero-scroll-hint { display: none; }
+    }
+
     @media (max-width: 680px) {
       .nav-links { display: none; }
       .section { padding: 72px 20px; }
@@ -557,11 +579,6 @@
       .timeline-item::before { left: -25px; }
       .timeline-meta { flex-direction: row; align-items: center; gap: 10px; }
       .projects-grid, .interests-grid { grid-template-columns: 1fr; }
-      .hero-name { letter-spacing: -0.02em; }
-    }
-
-    @media (max-width: 400px) {
-      .hero { padding: 80px 20px 60px; }
     }
   </style>
 </head>
@@ -586,10 +603,10 @@
 
   <!-- HERO -->
   <section class="hero" id="hero">
+    <div class="hero-image fade-up">
+      <img src="headshot.png" alt="Jamason Blair" />
+    </div>
     <div class="hero-inner fade-up">
-      <div class="hero-avatar">
-        <img src="headshot.jpg" alt="Jamason Blair" />
-      </div>
       <p class="hero-eyebrow">Supply Chain · Operations · Technology</p>
       <h1 class="hero-name">Jamason Blair</h1>
       <p class="hero-tagline">Global Supply Chain Management</p>
