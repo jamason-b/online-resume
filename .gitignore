@@ -1,0 +1,11 @@
+# Resume working files (drafts, dated copies) stay out of this public repo.
+# Only the published Resume.pdf belongs here.
+Resume -- *
+*.doc
+*.docx
+*.pages
+*.odt
+
+# Office and LibreOffice lock files created while a document is open
+~$*
+.~lock.*
