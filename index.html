@@ -263,8 +263,38 @@
       font-weight: 300;
       color: var(--ink-light);
       max-width: 400px;
-      margin-bottom: 40px;
+      margin-bottom: 16px;
       line-height: 1.7;
+    }
+
+    .hero-meta {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink);
+      max-width: 420px;
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    .hero-availability {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--ink-light);
+      max-width: 420px;
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .hero-principle {
+      font-size: 13px;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--ink);
+      max-width: 390px;
+      border-left: 2px solid var(--border-mid);
+      padding-left: 12px;
+      margin-bottom: 28px;
+      line-height: 1.6;
     }
 
     .hero-actions {
@@ -617,6 +647,15 @@
       margin-bottom: 8px;
     }
 
+    .project-kicker {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
     .project-desc {
       font-size: 14px;
       font-weight: 300;
@@ -640,6 +679,39 @@
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 3px 10px;
+    }
+
+    .tools-strip {
+      margin-top: 40px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .tools-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .tools-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tools-list span {
+      font-size: 12px;
+      color: var(--ink-light);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 11px;
     }
 
     /* ─── Interests ─────────────────────────────────────────── */
@@ -792,6 +864,9 @@
       <h1 class="hero-name">Jamason Blair</h1>
       <p class="hero-tagline">Global Supply Chain Management</p>
       <p class="hero-sub">Supply chain student who builds AI tools and cares too much about golf.</p>
+      <p class="hero-meta">BYU Marriott · B.S. Global Supply Chain Management · Graduating December 2026</p>
+      <p class="hero-availability">Currently looking for full-time roles in supply chain analytics, logistics automation, and operations intelligence starting January 2027. Utah or remote.</p>
+      <p class="hero-principle">I use AI to make operational work less annoying, not to replace the people doing it.</p>
       <div class="hero-actions">
         <a href="https://linkedin.com/in/jamason-blair" target="_blank" rel="noopener" class="icon-link" aria-label="LinkedIn">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452H16.89v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a1.983 1.983 0 01-1.98-1.981 1.982 1.982 0 111.981 1.981zm1.71 13.019H3.623V9h3.424v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -971,10 +1046,38 @@
   <section class="section section-alt" id="builder">
     <div class="section-inner">
       <div class="section-header fade-up">
-        <p class="section-label">Projects</p>
+        <p class="section-label">Selected Work</p>
         <h2 class="section-title">Things I've Built</h2>
       </div>
       <div class="projects-grid">
+
+        <div class="project-card fade-up">
+          <div class="project-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"/><path d="M4 19h17"/><path d="m7 15 3-4 3 2 5-7"/><path d="M18 6h2v2"/></svg>
+          </div>
+          <div class="project-body">
+            <p class="project-kicker">Allegiant Air · Supply Chain Analysis</p>
+            <h3 class="project-title">Freight Spend Analysis</h3>
+            <p class="project-desc">A self-initiated analysis built from raw shipment data during my Allegiant internship. Used Copilot to turn scattered records into a year-long view of spend by carrier and lane, with pricing outliers surfaced for closer review.</p>
+            <div class="project-tags">
+              <span>Freight sourcing</span><span>AI-assisted analysis</span><span>Logistics</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card fade-up">
+          <div class="project-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7 9-4 9 4-9 4-9-4Z"/><path d="m3 7 9 4 9-4"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>
+          </div>
+          <div class="project-body">
+            <p class="project-kicker">Stat CareOps · Inventory Operations</p>
+            <h3 class="project-title">Inventory &amp; Fulfillment Systems</h3>
+            <p class="project-desc">Helped mature inventory and fulfillment operations at an early-stage healthcare technology startup through vendor purchasing, packaging, QA, and process improvements that cut lead times 43% and stockouts 85%.</p>
+            <div class="project-tags">
+              <span>Inventory</span><span>Fulfillment</span><span>Supplier coordination</span>
+            </div>
+          </div>
+        </div>
 
         <div class="project-card fade-up">
           <div class="project-icon" aria-hidden="true">
@@ -1002,6 +1105,12 @@
           </div>
         </div>
 
+      </div>
+      <div class="tools-strip fade-up">
+        <p class="tools-label">Tools I use</p>
+        <div class="tools-list">
+          <span>Excel</span><span>SQL</span><span>Power BI</span><span>Make</span><span>AI-assisted analysis</span><span>Workflow automation</span><span>SOP documentation</span>
+        </div>
       </div>
     </div>
   </section>
