@@ -483,32 +483,84 @@
     .experience-more-content { padding-top: 40px; }
 
     /* ─── Recommendations ──────────────────────────────────── */
+    .recommendations-featured {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
     .recommendation-card {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 40px 44px;
+      padding: 32px;
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       background: var(--bg);
       box-shadow: var(--shadow-card);
     }
-    .recommendation-card + .recommendation-card { margin-top: 20px; }
 
     .recommendation-mark {
-      font-size: 56px;
+      font-size: 48px;
       font-weight: 300;
       line-height: 0.7;
       color: var(--muted);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .recommendation-quote {
-      font-size: clamp(18px, 2.4vw, 24px);
+      font-size: clamp(17px, 2vw, 21px);
       font-weight: 300;
-      line-height: 1.6;
+      line-height: 1.5;
       letter-spacing: -0.01em;
       color: var(--ink-dark);
-      margin-bottom: 28px;
+      margin-bottom: 24px;
+    }
+
+    .recommendation-card.compact {
+      max-width: none;
+      margin: 0;
+      padding: 28px 30px;
+    }
+    .recommendation-card.compact .recommendation-quote { font-size: 18px; }
+
+    .recommendations-more {
+      margin-top: 28px;
+    }
+    .recommendations-more summary {
+      list-style: none;
+      width: fit-content;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      color: var(--ink-dark);
+      border: 1px solid var(--border-mid);
+      border-radius: 20px;
+      padding: 7px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      transition: background var(--transition), color var(--transition), border-color var(--transition);
+    }
+    .recommendations-more summary::-webkit-details-marker { display: none; }
+    .recommendations-more summary::before {
+      content: '+';
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1;
+    }
+    .recommendations-more summary:hover {
+      background: var(--ink-dark);
+      color: var(--bg);
+      border-color: var(--ink-dark);
+    }
+    .recommendations-more[open] summary::before { content: '−'; }
+    .recommendations-more[open] .summary-closed { display: none; }
+    .recommendations-more:not([open]) .summary-open { display: none; }
+    .recommendations-more-content {
+      max-width: 760px;
+      margin: 0 auto;
+      display: grid;
+      gap: 20px;
+      padding-top: 20px;
     }
 
     .recommendation-author {
@@ -705,6 +757,7 @@
       .timeline-item::before { left: -25px; }
       .timeline-meta { flex-direction: row; align-items: center; gap: 10px; }
       .recommendation-card { padding: 32px 24px; }
+      .recommendations-featured { grid-template-columns: 1fr; }
       .projects-grid, .interests-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -873,36 +926,44 @@
         <p class="section-label">Recommendations</p>
         <h2 class="section-title">What People Say</h2>
       </div>
-      <article class="recommendation-card fade-up">
-        <p class="recommendation-mark" aria-hidden="true">“</p>
-        <blockquote class="recommendation-quote">If you need an detail-oriented operational team member who brings order to fast-moving environments, Jamason is the person you want on your team. When he joined our early-stage startup of ~15 people, he immediately stepped up to organize our fulfillment processes while reliably taking charge of inventory sourcing and procurement. What truly sets Jamason apart is his ability to grasp the full scope of a project, build a clear execution plan, and deliver results. Beyond his operational talents, he is a dependable, well-liked team player. I would gladly work with Jamason again!</blockquote>
-        <cite class="recommendation-author">Ian Petersen, MBA, PMP</cite>
-        <p class="recommendation-role">VP of Customer Success at Stat</p>
-      </article>
-      <article class="recommendation-card fade-up">
-        <p class="recommendation-mark" aria-hidden="true">“</p>
-        <blockquote class="recommendation-quote">I had the pleasure of working closely with Jamason during his summer internship at Allegiant. Throughout his time with our team, he consistently demonstrated a strong work ethic, professionalism, and a genuine willingness to learn.<br><br>Jamason approached each assignment with enthusiasm and attention to detail. He quickly became a dependable member of the team, asked thoughtful questions, and was always willing to step in wherever assistance was needed. His positive attitude and ability to work effectively with others made him a valuable contributor to our operation.<br><br>Jamason has a promising future in supply chain management, and I am confident that his dedication, character, and eagerness to grow will make him an asset to any organization. I highly recommend him and wish him continued success as he completes his degree and begins the next stage of his career!</blockquote>
-        <cite class="recommendation-author">Dustin Record</cite>
-        <p class="recommendation-role">Trade and Logistics Specialist at Allegiant</p>
-      </article>
-      <article class="recommendation-card fade-up">
-        <p class="recommendation-mark" aria-hidden="true">“</p>
-        <blockquote class="recommendation-quote">I had the pleasure of working with Jamason during his internship with the Allegiant Airlines Logistics team. He quickly became a reliable and helpful part of the group.<br><br>Jamason supported day-to-day logistics work—coordinating shipments, tracking materials, helping with documentation, and working with vendors and internal teams to keep things moving. He picked up assignment tasks fast, paid attention to details, and wasn’t afraid to jump in and ask appropriate questions when something was unclear.<br><br>What stood out most was his positive attitude and steady work ethic. He was easy to work with, professional, and always ready to help. I’d gladly recommend him for future roles in any supply chain field.<br><br>Happy to share more if needed.</blockquote>
-        <cite class="recommendation-author">Sylvia Smith</cite>
-        <p class="recommendation-role">Trade and Logistics Supervisor at Allegiant</p>
-      </article>
-      <article class="recommendation-card fade-up">
-        <p class="recommendation-mark" aria-hidden="true">“</p>
-        <blockquote class="recommendation-quote">I would highly recommend Jamason to an employer looking for a genuine, honest person that's solution-focused and aware of both a client's needs as well as company goals. Working with Jamason in a sales leadership capacity helped me discover his drive to understand customers so he could help them in a meaningful way. He was an ally to other employees on his team, caring not only about his own success but those of his coworker-peers as well. Jamason will be a highly valued employee wherever his career takes him.</blockquote>
-        <cite class="recommendation-author">Trenton Petersen</cite>
-        <p class="recommendation-role">Sales Leader, former manager at Vivint</p>
-      </article>
-      <article class="recommendation-card fade-up">
-        <p class="recommendation-mark" aria-hidden="true">“</p>
-        <blockquote class="recommendation-quote">Jamason was instrumental as we scaled and started to mature our inventory and fulfillment processes. He led out on a number of things ranging from improving our brand through packaging and imaging to developing fulfillment processes to insure fewer stock-outs. I cannot think of a process that we use today that Jamason did not originally start or influence during his time at Stat. He is a great resource and will drive a lot of value in his career!</blockquote>
-        <cite class="recommendation-author">Kent Johnson</cite>
-        <p class="recommendation-role">Former manager at Stat · MBA, University of Illinois</p>
-      </article>
+      <div class="recommendations-featured">
+        <article class="recommendation-card fade-up">
+          <p class="recommendation-mark" aria-hidden="true">“</p>
+          <blockquote class="recommendation-quote">Jamason was instrumental as we scaled and started to mature our inventory and fulfillment processes. I cannot think of a process that we use today that Jamason did not originally start or influence during his time at Stat.</blockquote>
+          <cite class="recommendation-author">Kent Johnson</cite>
+          <p class="recommendation-role">Former manager at Stat · MBA, University of Illinois</p>
+        </article>
+        <article class="recommendation-card fade-up">
+          <p class="recommendation-mark" aria-hidden="true">“</p>
+          <blockquote class="recommendation-quote">What stood out most was his positive attitude and steady work ethic. He was easy to work with, professional, and always ready to help. I’d gladly recommend him for future roles in any supply chain field.</blockquote>
+          <cite class="recommendation-author">Sylvia Smith</cite>
+          <p class="recommendation-role">Trade and Logistics Supervisor at Allegiant</p>
+        </article>
+      </div>
+
+      <details class="recommendations-more">
+        <summary><span class="summary-closed">See more recommendations</span><span class="summary-open">Hide more recommendations</span></summary>
+        <div class="recommendations-more-content">
+          <article class="recommendation-card compact fade-up">
+            <p class="recommendation-mark" aria-hidden="true">“</p>
+            <blockquote class="recommendation-quote">If you need an detail-oriented operational team member who brings order to fast-moving environments, Jamason is the person you want on your team. What truly sets Jamason apart is his ability to grasp the full scope of a project, build a clear execution plan, and deliver results.</blockquote>
+            <cite class="recommendation-author">Ian Petersen, MBA, PMP</cite>
+            <p class="recommendation-role">VP of Customer Success at Stat</p>
+          </article>
+          <article class="recommendation-card compact fade-up">
+            <p class="recommendation-mark" aria-hidden="true">“</p>
+            <blockquote class="recommendation-quote">He consistently demonstrated a strong work ethic, professionalism, and a genuine willingness to learn. His positive attitude and ability to work effectively with others made him a valuable contributor to our operation.</blockquote>
+            <cite class="recommendation-author">Dustin Record</cite>
+            <p class="recommendation-role">Trade and Logistics Specialist at Allegiant</p>
+          </article>
+          <article class="recommendation-card compact fade-up">
+            <p class="recommendation-mark" aria-hidden="true">“</p>
+            <blockquote class="recommendation-quote">I would highly recommend Jamason to an employer looking for a genuine, honest person that's solution-focused and aware of both a client's needs as well as company goals. He was an ally to other employees on his team, caring not only about his own success but those of his coworker-peers as well.</blockquote>
+            <cite class="recommendation-author">Trenton Petersen</cite>
+            <p class="recommendation-role">Sales Leader, former manager at Vivint</p>
+          </article>
+        </div>
+      </details>
     </div>
   </section>
 
