@@ -446,6 +446,84 @@
       max-width: 480px;
     }
 
+    .timeline > .timeline-item:nth-child(3) { padding-bottom: 24px; }
+
+    .experience-more { margin-top: 0; }
+
+    .experience-more summary {
+      list-style: none;
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      color: var(--ink-dark);
+      border: 1px solid var(--border-mid);
+      border-radius: 20px;
+      padding: 7px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      transition: background var(--transition), color var(--transition), border-color var(--transition);
+    }
+    .experience-more summary::-webkit-details-marker { display: none; }
+    .experience-more summary::before {
+      content: '+';
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1;
+    }
+    .experience-more summary:hover {
+      background: var(--ink-dark);
+      color: var(--bg);
+      border-color: var(--ink-dark);
+    }
+    .experience-more[open] summary::before { content: '−'; }
+    .experience-more[open] .summary-closed { display: none; }
+    .experience-more:not([open]) .summary-open { display: none; }
+    .experience-more-content { padding-top: 40px; }
+
+    /* ─── Recommendations ──────────────────────────────────── */
+    .recommendation-card {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 44px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--bg);
+      box-shadow: var(--shadow-card);
+    }
+    .recommendation-card + .recommendation-card { margin-top: 20px; }
+
+    .recommendation-mark {
+      font-size: 56px;
+      font-weight: 300;
+      line-height: 0.7;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .recommendation-quote {
+      font-size: clamp(18px, 2.4vw, 24px);
+      font-weight: 300;
+      line-height: 1.6;
+      letter-spacing: -0.01em;
+      color: var(--ink-dark);
+      margin-bottom: 28px;
+    }
+
+    .recommendation-author {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      color: var(--ink-dark);
+    }
+
+    .recommendation-role {
+      font-size: 13px;
+      color: var(--ink-light);
+      margin-top: 3px;
+    }
+
     /* ─── Projects ──────────────────────────────────────────── */
     .projects-grid {
       display: grid;
@@ -626,6 +704,7 @@
       .timeline-item { grid-template-columns: 1fr; gap: 6px; }
       .timeline-item::before { left: -25px; }
       .timeline-meta { flex-direction: row; align-items: center; gap: 10px; }
+      .recommendation-card { padding: 32px 24px; }
       .projects-grid, .interests-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -638,6 +717,7 @@
       <span class="nav-name">JB</span>
       <ul class="nav-links">
         <li><a href="#impact">Experience</a></li>
+        <li><a href="#recommendations">Recommendations</a></li>
         <li><a href="#builder">Projects</a></li>
         <li><a href="#human">Interests</a></li>
         <li><a href="#footer" class="nav-cta">Connect</a></li>
@@ -664,7 +744,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452H16.89v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a1.983 1.983 0 01-1.98-1.981 1.982 1.982 0 111.981 1.981zm1.71 13.019H3.623V9h3.424v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           <span class="icon-label">LinkedIn</span>
         </a>
-        <a href="mailto:jamasonblair2001@gmail.com" class="icon-link" aria-label="Email">
+        <a href="mailto:jamasonrblair@gmail.com" class="icon-link" aria-label="Email">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           <span class="icon-label">Email</span>
         </a>
@@ -702,13 +782,12 @@
 
         <div class="timeline-item fade-up">
           <div class="timeline-meta">
-            <span class="timeline-date">Jul 2026 – Present</span>
-            <span class="timeline-status current">Current</span>
+            <span class="timeline-date">Jul 2026 – Oct 2026</span>
           </div>
           <div class="timeline-content">
             <h3 class="timeline-company">HiFi Design</h3>
             <p class="timeline-role">Product Strategy Contractor</p>
-            <p class="timeline-desc">Product direction and beta QA for Mi DOTs, an AI note-taking app for college students. Ran user research across a 32-person beta cohort and turned daily survey data into a prioritized fix list.</p>
+            <p class="timeline-desc">Led product direction and beta QA for Mi DOTs, an AI note-taking app for college students. Ran user research across a 32-person beta cohort and turned daily survey data into a prioritized fix list.</p>
           </div>
         </div>
 
@@ -723,7 +802,10 @@
           </div>
         </div>
 
-        <div class="timeline-item fade-up">
+        <details class="experience-more">
+          <summary><span class="summary-closed">See more experience</span><span class="summary-open">Hide additional experience</span></summary>
+          <div class="experience-more-content">
+        <div class="timeline-item">
           <div class="timeline-meta">
             <span class="timeline-date">Aug 2024 – May 2026</span>
           </div>
@@ -734,7 +816,7 @@
           </div>
         </div>
 
-        <div class="timeline-item fade-up">
+        <div class="timeline-item">
           <div class="timeline-meta">
             <span class="timeline-date">Apr 2025 – Apr 2026</span>
           </div>
@@ -745,7 +827,7 @@
           </div>
         </div>
 
-        <div class="timeline-item fade-up">
+        <div class="timeline-item">
           <div class="timeline-meta">
             <span class="timeline-date">Apr 2022 – Apr 2025</span>
           </div>
@@ -756,7 +838,7 @@
           </div>
         </div>
 
-        <div class="timeline-item fade-up">
+        <div class="timeline-item">
           <div class="timeline-meta">
             <span class="timeline-date">Jan 2024 – Apr 2024</span>
           </div>
@@ -767,18 +849,60 @@
           </div>
         </div>
 
-        <div class="timeline-item fade-up">
+        <div class="timeline-item">
           <div class="timeline-meta">
             <span class="timeline-date">Nov 2019 – Nov 2021</span>
           </div>
           <div class="timeline-content">
             <h3 class="timeline-company">The Church of Jesus Christ of Latter-day Saints</h3>
-            <p class="timeline-role">Volunteer Representative</p>
+            <p class="timeline-role">Ecclesiastical Volunteer</p>
             <p class="timeline-desc">Two-year volunteer service in Mesa, AZ — produced 50+ digital ads, directed live-streamed events, and trained 100+ volunteers in digital outreach tools.</p>
           </div>
         </div>
+          </div>
+        </details>
 
       </div>
+    </div>
+  </section>
+
+  <!-- RECOMMENDATIONS -->
+  <section class="section section-alt" id="recommendations">
+    <div class="section-inner">
+      <div class="section-header fade-up">
+        <p class="section-label">Recommendations</p>
+        <h2 class="section-title">What People Say</h2>
+      </div>
+      <article class="recommendation-card fade-up">
+        <p class="recommendation-mark" aria-hidden="true">“</p>
+        <blockquote class="recommendation-quote">If you need an detail-oriented operational team member who brings order to fast-moving environments, Jamason is the person you want on your team. When he joined our early-stage startup of ~15 people, he immediately stepped up to organize our fulfillment processes while reliably taking charge of inventory sourcing and procurement. What truly sets Jamason apart is his ability to grasp the full scope of a project, build a clear execution plan, and deliver results. Beyond his operational talents, he is a dependable, well-liked team player. I would gladly work with Jamason again!</blockquote>
+        <cite class="recommendation-author">Ian Petersen, MBA, PMP</cite>
+        <p class="recommendation-role">VP of Customer Success at Stat</p>
+      </article>
+      <article class="recommendation-card fade-up">
+        <p class="recommendation-mark" aria-hidden="true">“</p>
+        <blockquote class="recommendation-quote">I had the pleasure of working closely with Jamason during his summer internship at Allegiant. Throughout his time with our team, he consistently demonstrated a strong work ethic, professionalism, and a genuine willingness to learn.<br><br>Jamason approached each assignment with enthusiasm and attention to detail. He quickly became a dependable member of the team, asked thoughtful questions, and was always willing to step in wherever assistance was needed. His positive attitude and ability to work effectively with others made him a valuable contributor to our operation.<br><br>Jamason has a promising future in supply chain management, and I am confident that his dedication, character, and eagerness to grow will make him an asset to any organization. I highly recommend him and wish him continued success as he completes his degree and begins the next stage of his career!</blockquote>
+        <cite class="recommendation-author">Dustin Record</cite>
+        <p class="recommendation-role">Trade and Logistics Specialist at Allegiant</p>
+      </article>
+      <article class="recommendation-card fade-up">
+        <p class="recommendation-mark" aria-hidden="true">“</p>
+        <blockquote class="recommendation-quote">I had the pleasure of working with Jamason during his internship with the Allegiant Airlines Logistics team. He quickly became a reliable and helpful part of the group.<br><br>Jamason supported day-to-day logistics work—coordinating shipments, tracking materials, helping with documentation, and working with vendors and internal teams to keep things moving. He picked up assignment tasks fast, paid attention to details, and wasn’t afraid to jump in and ask appropriate questions when something was unclear.<br><br>What stood out most was his positive attitude and steady work ethic. He was easy to work with, professional, and always ready to help. I’d gladly recommend him for future roles in any supply chain field.<br><br>Happy to share more if needed.</blockquote>
+        <cite class="recommendation-author">Sylvia Smith</cite>
+        <p class="recommendation-role">Trade and Logistics Supervisor at Allegiant</p>
+      </article>
+      <article class="recommendation-card fade-up">
+        <p class="recommendation-mark" aria-hidden="true">“</p>
+        <blockquote class="recommendation-quote">I would highly recommend Jamason to an employer looking for a genuine, honest person that's solution-focused and aware of both a client's needs as well as company goals. Working with Jamason in a sales leadership capacity helped me discover his drive to understand customers so he could help them in a meaningful way. He was an ally to other employees on his team, caring not only about his own success but those of his coworker-peers as well. Jamason will be a highly valued employee wherever his career takes him.</blockquote>
+        <cite class="recommendation-author">Trenton Petersen</cite>
+        <p class="recommendation-role">Sales Leader, former manager at Vivint</p>
+      </article>
+      <article class="recommendation-card fade-up">
+        <p class="recommendation-mark" aria-hidden="true">“</p>
+        <blockquote class="recommendation-quote">Jamason was instrumental as we scaled and started to mature our inventory and fulfillment processes. He led out on a number of things ranging from improving our brand through packaging and imaging to developing fulfillment processes to insure fewer stock-outs. I cannot think of a process that we use today that Jamason did not originally start or influence during his time at Stat. He is a great resource and will drive a lot of value in his career!</blockquote>
+        <cite class="recommendation-author">Kent Johnson</cite>
+        <p class="recommendation-role">Former manager at Stat · MBA, University of Illinois</p>
+      </article>
     </div>
   </section>
 
@@ -863,7 +987,7 @@
     <div class="footer-inner fade-up">
       <p class="footer-cta">Want to connect?</p>
       <div class="footer-links">
-        <a href="mailto:jamasonblair2001@gmail.com">jamasonblair2001@gmail.com</a>
+        <a href="mailto:jamasonrblair@gmail.com">jamasonrblair@gmail.com</a>
         <span class="footer-divider" aria-hidden="true">·</span>
         <a href="https://linkedin.com/in/jamason-blair" target="_blank" rel="noopener">LinkedIn</a>
       </div>
