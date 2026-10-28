@@ -924,7 +924,7 @@
           <div class="timeline-content">
             <h3 class="timeline-company">Allegiant Air</h3>
             <p class="timeline-role">Trade &amp; Logistics Intern</p>
-            <p class="timeline-desc">Sourced freight for AOG, expedited, and routine shipments across Allegiant's MRO and base network, from RFQ through award and proof of delivery. Built a year-long spend-by-carrier and spend-by-lane analysis out of raw shipment data nobody had consolidated.</p>
+            <p class="timeline-desc">Ran 150+ RFQ cycles across routine, expedited, and 12-hour AOG shipments, from award through delivery. Audited 4,000+ customs-log rows for HTS accuracy and built an AI-assisted, year-long cost-per-pound analysis by lane and mode to flag pricing outliers.</p>
           </div>
         </div>
 
@@ -949,7 +949,7 @@
           <div class="timeline-content">
             <h3 class="timeline-company">Stat CareOps</h3>
             <p class="timeline-role">Inventory Quality Assurance Specialist</p>
-            <p class="timeline-desc">Cut lead times 43% and reduced stockouts 85% through inventory system overhauls and direct supplier coordination with Chinese and U.S. vendors.</p>
+            <p class="timeline-desc">Reduced lead times 43% (23 to 13 days), emergency shipments 80%, and stockouts 85% through inventory process changes, QA protocols, simpler packing, and direct coordination with Chinese and U.S. suppliers.</p>
           </div>
         </div>
 
@@ -960,7 +960,7 @@
           <div class="timeline-content">
             <h3 class="timeline-company">Vivint</h3>
             <p class="timeline-role">Direct to Home Sales Representative</p>
-            <p class="timeline-desc">Grew personal revenue from $112K to $290K in two years. Mentored a team that generated $500K+ combined.</p>
+            <p class="timeline-desc">Increased sales revenue 159% ($112K to $290K) over two years and improved lead-to-close efficiency 30% through KPI analysis. Mentored a team that generated $500K+ in combined revenue.</p>
           </div>
         </div>
 
@@ -1171,8 +1171,7 @@
     const themeToggle = document.getElementById('themeToggle');
     const themeColor = document.getElementById('themeColor');
     const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = savedTheme ?? (prefersDark ? 'dark' : 'light');
+    const initialTheme = savedTheme ?? 'light';
     html.setAttribute('data-theme', initialTheme);
     themeColor.content = initialTheme === 'dark' ? '#000000' : '#ffffff';
 
